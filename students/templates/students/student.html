@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+    <h1 align="center">千峰python学员信息</h1>
+    <hr>
+        <table border="1" cellpadding="10" width="800" align="center">
+            <tr align="center">
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>介绍</td>
+                <td>班级</td>
+            </tr>
+            {% for student in student_list %}
+                <tr align="center">
+                    <td><a href="{% url 'students:stu_message' id=student.id%}">{{ student.name }}</a></td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>{{ student.info }}</td>
+                    <td>{{ student.grade }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>
